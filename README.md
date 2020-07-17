@@ -1,41 +1,45 @@
-Awesome Bioinformatics [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Build Status](https://travis-ci.org/danielecook/Awesome-Bioinformatics.svg?branch=master)](https://travis-ci.org/danielecook/Awesome-Bioinformatics)
+Awesome Bioinformatics [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+![URL Check](https://github.com/danielecook/Awesome-Bioinformatics/workflows/URL%20Check/badge.svg) ![TOC](https://github.com/danielecook/Awesome-Bioinformatics/workflows/TOC/badge.svg)
 ======================
 
 > Bioinformatics is an interdisciplinary field that develops methods and software tools for understanding biological data. — [Wikipedia](https://en.wikipedia.org/wiki/Bioinformatics)
 
 A curated list of awesome Bioinformatics software, resources, and libraries. Mostly command line based, and free or open-source. Please feel free to [contribute](CONTRIBUTING.md)!
 
-**Table of Contents**
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
 
 - [Package suites](#package-suites)
-  - [R: Bioconductor](#bioconductor)
-  - [Python: Biopython](#biopython)
+  - [Bioconductor](#bioconductor)
+  - [Biopython](#biopython)
   - [Bioconda](#bioconda)
+  - [BioJulia](#biojulia)
+- [Data Tools](#data-tools)
 - [Data Processing](#data-processing)
   - [Command Line Utilities](#command-line-utilities)
 - [Next Generation Sequencing](#next-generation-sequencing)
-  - [Pipelines/Pipeline frameworks](#pipelinespipeline-frameworks)
+  - [Workflow Managers](#workflow-managers)
+  - [Pipelines](#pipelines)
   - [Sequence Processing](#sequence-processing)
+  - [Data Analysis](#data-analysis)
   - [Sequence Alignment](#sequence-alignment)
   - [Variant Calling](#variant-calling)
   - [BAM File Utilities](#bam-file-utilities)
   - [VCF File Utilities](#vcf-file-utilities)
   - [GFF BED File Utilities](#gff-bed-file-utilities)
   - [Variant Simulation](#variant-simulation)
-  - [Variant Filtering / Quality Control](#variant-filtering--quality-control)
   - [Variant Prediction/Annotation](#variant-predictionannotation)
   - [Python Modules](#python-modules)
     - [Data](#data)
     - [Tools](#tools)
 - [Visualization](#visualization)
-  - [Genome Browsers / Gene diagrams](#genome-browsers--gene-diagrams)
+  - [Genome Browsers / Gene Diagrams](#genome-browsers--gene-diagrams)
   - [Circos Related](#circos-related)
 - [Database Access](#database-access)
 - [Resources](#resources)
-  - [Becoming a Bionformatician](#becoming-a-bioinformatician)
+  - [Becoming a Bioinformatician](#becoming-a-bioinformatician)
+  - [Bioinformatics on GitHub](#bioinformatics-on-github)
   - [Sequencing](#sequencing)
   - [RNA-Seq](#rna-seq)
   - [ChIP-Seq](#chip-seq)
@@ -64,6 +68,15 @@ Package suites gather software packages and installation tools for specific lang
 
 * __[Bioconda](https://bioconda.github.io/)__ - A channel for the [conda package manager](http://conda.pydata.org/docs/intro.html) specializing in bioinformatics software. Includes a repository with 3000+ ready-to-install (with `conda install`) bioinformatics packages.
 
+### BioJulia
+
+* __[BioJulia](https://biojulia.net/)__ - Bioinformatics and computational biology infastructure for the Julia programming language.
+
+## Data Tools
+
+* __[GGD](https://github.com/gogetdata/ggd-cli)__ - Go Get Data; A command line interface for obtaining genomic data
+* __[SRA-Explorer](https://sra-explorer.info/)__ - Easily get SRA download links and other information.
+
 ## Data Processing
 
 ### Command Line Utilities
@@ -77,28 +90,32 @@ Package suites gather software packages and installation tools for specific lang
 * __[easy_qsub](https://github.com/shenwei356/easy_qsub)__ - Easily submitting PBS jobs with script template. Multiple input files supported.
 * __[GNU `parallel`](http://www.gnu.org/software/parallel/)__ - General parallelizer that runs jobs in parallel on a single multi-core machine. [Here](https://www.biostars.org/p/63816/) are some example scripts using GNU `parallel`.
 * __[grabix](https://github.com/arq5x/grabix)__ - A wee tool for random access into BGZF files.
+* __[gsort](https://github.com/brentp/gsort)__ - Sort genomic files according to a specified order.
 * __[tabix](https://github.com/samtools/tabix)__ - Table file index.
 * __[wormtable](https://github.com/wormtable/wormtable)__ - Write-once-read-many table for large datasets.
 * __[zindex](https://github.com/mattgodbolt/zindex)__ - Create an index on a compressed text file.
 
 ## Next Generation Sequencing
 
-### Pipelines/Pipeline frameworks
+### Workflow Managers
 
-* __[Awesome-Pipeline](https://github.com/pditommaso/awesome-pipeline)__ - A list of pipeline resources.
-* __[bcbio-nextgen](https://github.com/chapmanb/bcbio-nextgen)__ - Batteries included genomic analysis pipeline for variant and RNA-Seq analysis, structural variant calling, annotation, and prediction.
 * __[BigDataScript](https://pcingola.github.io/BigDataScript/)__ - A cross-system scripting language for working with big data pipelines in computer systems of different sizes and capabilities.
 * __[Bpipe](http://docs.bpipe.org)__ - A small language for defining pipeline stages and linking them together to make pipelines.
 * __[Common Workflow Language](http://www.commonwl.org/)__ - a specification for describing analysis workflows and tools that are portable and scalable across a variety of software and hardware environments, from workstations to cluster, cloud, and high performance computing (HPC) environments.
 * __[Cromwell](https://github.com/broadinstitute/cromwell)__ - A Workflow Management System geared towards scientific workflows.
 * __[Galaxy](https://usegalaxy.org/)__ - a popular open-source, web-based platform for data intensive biomedical research. Has several features, from data analysis to workflow management to visualization tools.
 * __[GATK Queue](https://gatkforums.broadinstitute.org/gatk/discussion/1288/howto-run-queue-for-the-first-time)__ - A pipelining system built to work natively with GATK as well as other high-throughput sequence analysis software.
-* __[Nextflow](https://www.nextflow.io)__ - A fluent DSL modelled around the UNIX pipe concept, that simplifies writing parallel and scalable pipelines in a portable manner.
-* __[R-Peridot](http://www.bioinformatics-brazil.org/r-peridot/)__ - Customizable pipeline for differential expression analysis with an intuitive GUI.
+* __[Nextflow](https://www.nextflow.io) (recommended)__ - A fluent DSL modelled around the UNIX pipe concept, that simplifies writing parallel and scalable pipelines in a portable manner.
 * __[Ruffus](http://www.ruffus.org.uk)__ - Computation Pipeline library for python widely used in science and bioinformatics.
 * __[SeqWare](https://seqware.github.io/)__ - Hadoop Oozie-based workflow system focused on genomics data analysis in cloud environments.
 * __[Snakemake](https://bitbucket.org/snakemake/snakemake/wiki/Home)__ - A workflow management system in Python that aims to reduce the complexity of creating workflows by providing a fast and comfortable execution environment.
 * __[Workflow Descriptor Language](https://github.com/broadinstitute/wdl)__ - Workflow standard developed by the Broad.
+
+### Pipelines
+
+* __[Awesome-Pipeline](https://github.com/pditommaso/awesome-pipeline)__ - A list of pipeline resources.
+* __[bcbio-nextgen](https://github.com/chapmanb/bcbio-nextgen)__ - Batteries included genomic analysis pipeline for variant and RNA-Seq analysis, structural variant calling, annotation, and prediction.
+* __[R-Peridot](http://www.bioinformatics-brazil.org/r-peridot/)__ - Customizable pipeline for differential expression analysis with an intuitive GUI.
 
 ### Sequence Processing
 
@@ -114,6 +131,13 @@ Sequence Processing includes tasks such as demultiplexing raw read data, and tri
 * __[Seqtk](https://github.com/lh3/seqtk)__ - Toolkit for processing sequences in FASTA/Q formats.
 * __[smof](https://github.com/incertae-sedis/smof)__ - UNIX-style FASTA manipulation tools.
 
+### Data Analysis
+
+The following items allow for scalable genomic analysis by introducing specialized databases.
+
+* __[Hail](https://github.com/hail-is/hail)__ - Scalable genomic analysis
+* __[GLNexus](https://github.com/dnanexus-rnd/GLnexus)__ - Scalable gVCF merging and joint variant calling for population sequencing projects.
+
 ### Sequence Alignment
 
 __De Novo Alignment__
@@ -126,15 +150,25 @@ __DNA Resequencing__
 ### Variant Calling
 
 * __[freebayes](https://github.com/ekg/freebayes)__ - Bayesian haplotype-based polymorphism discovery and genotyping.
-* __[GATK](https://software.broadinstitute.org/gatk/)__ - Variant Discovery in High-Throughput Sequencing Data.
+* __[GATK](https://software.broadinstitute.org/gatk/)__ - Variant Discovery in High-Throughput Sequencing Data
 * __[samtools/bcftools/htslib](https://github.com/samtools/samtools)__ - A suite of tools for manipulating next-generation sequencing data.
+
+__Structural variant callers__
+
+* __[Delly](https://github.com/dellytools/delly)__ - Structural variant discovery by integrated paired-end and split-read analysis.
+* __[lumpy](https://github.com/arq5x/lumpy-sv)__ - lumpy: a general probabilistic framework for structural variant discovery.
+* __[manta](https://github.com/Illumina/manta)__ - Structural variant and indel caller for mapped sequencing data.
+* __[gridss](https://github.com/PapenfussLab/gridss)__ - GRIDSS: the Genomic Rearrangement IDentification Software Suite.
+* __[smoove](https://github.com/brentp/smoove)__ - structural variant calling and genotyping with existing tools, but,smoothly.
 
 ### BAM File Utilities
 
 * __[Bamtools](https://github.com/pezmaster31/bamtools)__ - Collection of tools for working with BAM files.
 * __[bam toolbox](https://github.com/AndersenLab/bam-toolbox)__ MtDNA:Nuclear Coverage; BAM Toolbox can output the ratio of MtDNA:nuclear coverage, a proxy for mitochondrial content.
 * __[mergesam](https://github.com/DarwinAwardWinner/mergesam)__ - Automate common SAM & BAM conversions.
+* __[mosdepth](https://github.com/brentp/mosdepth)__ - fast BAM/CRAM depth calculation for WGS, exome, or targeted sequencing
 * __[SAMstat](https://github.com/TimoLassmann/samstat)__ - Displaying sequence statistics for next-generation sequencing.
+* __[Somalier](https://github.com/brentp/mosdepth)__ - Fast sample-swap and relatedness checks on BAMs/CRAMs/VCFs/GVCFs.
 * __[Telseq](https://github.com/zd1/telseq)__ - Telseq is a tool for estimating telomere length from whole genome sequence data.
 
 ### VCF File Utilities
@@ -154,8 +188,6 @@ __DNA Resequencing__
 
 * __[Bam Surgeon](https://github.com/adamewing/bamsurgeon)__ - Tools for adding mutations to existing `.bam` files, used for testing mutation callers.
 * __[wgsim](https://github.com/lh3/wgsim)__ - __Comes with samtools!__ - Reads simulator.
-
-### Variant Filtering / Quality Control
 
 ### Variant Prediction/Annotation
 
@@ -196,6 +228,7 @@ The following tools can be used to visualize genomic data or for constructing cu
 * __[PHAT](https://github.com/chgibb/PHAT)__ - Point and click, cross platform suite for analysing and visualizing next-generation sequencing datasets.
 * __[pileup.js](https://github.com/hammerlab/pileup.js)__ - JavaScript library that can be used to generate interactive and highly customizable web-based genome browsers.
 * __[scribl](https://github.com/chmille4/Scribl)__ - JavaScript library for drawing canvas-based gene diagrams. The [Homepage](http://chmille4.github.io/Scribl/) has examples.
+* __[Lucid Align](https://lucidalign.com/)__ - A modern sequence alignment viewer
 
 ### Circos Related
 
@@ -224,6 +257,10 @@ The following tools can be used to visualize genomic data or for constructing cu
 * [Rosalind](http://rosalind.info/) - Rosalind is a platform for learning bioinformatics through problem solving.
 * [A guide for the lonely bioinformatician](http://www.opiniomics.org/a-guide-for-the-lonely-bioinformatician/) - This guide is aimed at bioinformaticians, and is meant to guide them towards better career development.
 * [A brief history of bioinformatics](https://doi.org/10.1093/bib/bby063)
+
+### Bioinformatics on GitHub
+
+* [Awesome-alternative-splicing](https://github.com/HussainAther/awesome-alternative-splicing) - List of resources on alternative splicing including software, databases, and other tools..
 
 ### Sequencing
 
